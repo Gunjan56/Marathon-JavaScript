@@ -140,7 +140,7 @@ obj.fullName = obj.firstName+obj.lastName;
 obj["country"] = "India";//add new property to object
 console.log(obj.country);
 
-//method in object
+//method // function// behaviour in object
 //an function as a value of key in object is called method
 //They can be accessed and called in the same way as object properties
 const myObj = {
