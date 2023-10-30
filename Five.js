@@ -30,4 +30,30 @@ console.log(findMethod);
 const findIndex = array3.findIndex((element) => element > 6);
 console.log(findIndex);
 
-//some() => 
+//some() => used to work on condition if condition is passed ther return true else return false
+//it does not execute the function for empty array
+const someMethod = array3.some((element, index,array) => element >76);
+console.log(someMethod);
+
+//fill()=> fills the array with specified value, fil method overwrites th original array
+//start and end position can be given if not all elements will be filled, fill(value which want to add, start position, end position)
+const fillMethod = array3.fill(13, 0, 1);
+console.log(fillMethod);
+
+//sort() => sort the element in an array, overwrites the original array, sort the elements as string in alphabetical and ascending order
+const array4 = [2,1,3,5,6,4,8,9,5,10]; 
+const sortMethod = array4.sort((a,b) => a-b);//ascending order
+console.log(sortMethod);
+
+const sortMethod2 = array4.sort((a,b) => b-a);//descending order
+console.log(sortMethod2);
+
+//forEach()=> it is not a loop forEach method is a call back function which iterate over each elements of array
+//and execute the callback function it is not a loop but acts like a loop
+const forEachMethod = array4.forEach(function(currentValue, index, array){
+    console.log(currentValue+2);
+});
+console.log(forEachMethod);
+
+//scheduling => setTimeout and setInterval
+
