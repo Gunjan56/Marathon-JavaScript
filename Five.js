@@ -56,4 +56,58 @@ const forEachMethod = array4.forEach(function(currentValue, index, array){
 console.log(forEachMethod);
 
 //scheduling => setTimeout and setInterval
+//we make decide to execute a function not right now but after some delay =>there are two method for this
+//setTimeout => allow us to run a function once after the interval of time
+//setInterval => allow us to run a function repeatedly starting after th interval of time and
+// repeate continously at that interval of time
+//setTimeout is built in javascript function that allow us to run a block of code once after a 
+//specified delay in miliseconds
+let fullName = "John doe";
+setTimeout(function () {
+    console.log(`my name is ${fullName}`);
+    console.log(`How are you Today`);
+    console.log(`Where are you Form?`);
+}, 1000)
+//try in your console and see
+setTimeout(() => console.log("Good morning! "), 3000);
+setTimeout(() => console.log("Hello Guys!....."), 2000);
+setTimeout((name) => console.log(`${name} Are you Free Today`), 500, "Rohan");
+
+//cancelling with clearTimeout => setTimeout returns a times id which is used to cancle the setTimeout
+let timer = setTimeout(() => console.log("Hello world"), 5000);
+console.log(clearTimeout(timer));//this will stops the function from execution
+
+//setInterval => calls the function at specified intervals untill clearInterval is called or window is closed
+let FruitName = "Orange";
+const timer1 = setInterval(function(color) {
+    console.log(`my favorite fruit is ${FruitName}`);
+    console.log(`which is ${color} color`);
+},4000, "orange");
+
+// setInterval(() => console.log("Hello"), 2000);
+// setInterval(() => console.log("Bye Bye"), 3000);
+console.log(clearInterval(timer1));
+
+//parseInt, parseFloat, Number 
+//parseInt use to extract integer from string
+console.log(parseInt("123hello"));//123
+console.log(parseInt("23abc"));//23
+console.log(parseInt("abc123"));//NaN
+console.log(parseInt("123.23"));//123
+
+//parseFloat => use to get floating number , same as parseInt only diffrence is that it also returns decimal numbers
+console.log(parseFloat("123.450"));//123.450
+console.log(parseFloat("123abc.45"));//123
+console.log(parseFloat("123.345abc"));//123.345
+console.log(parseFloat("abc34.02"));//NaN
+
+//Number() convert string into valid Number
+console.log(Number("123"));//123
+console.log(Number("67.43"));//67.43
+console.log(Number("123abc"));//NaN
+console.log(Number(true));//1
+console.log(Number(false));//0
+
+
+
 
