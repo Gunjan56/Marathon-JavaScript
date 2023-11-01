@@ -62,52 +62,83 @@ console.log(forEachMethod);
 // repeate continously at that interval of time
 //setTimeout is built in javascript function that allow us to run a block of code once after a 
 //specified delay in miliseconds
-let fullName = "John doe";
-setTimeout(function () {
-    console.log(`my name is ${fullName}`);
-    console.log(`How are you Today`);
-    console.log(`Where are you Form?`);
-}, 1000)
-//try in your console and see
-setTimeout(() => console.log("Good morning! "), 3000);
-setTimeout(() => console.log("Hello Guys!....."), 2000);
-setTimeout((name) => console.log(`${name} Are you Free Today`), 500, "Rohan");
+// let fullName = "John doe";
+// setTimeout(function () {
+//     console.log(`my name is ${fullName}`);
+//     console.log(`How are you Today`);
+//     console.log(`Where are you Form?`);
+// }, 1000)
+// //try in your console and see
+// setTimeout(() => console.log("Good morning! "), 3000);
+// setTimeout(() => console.log("Hello Guys!....."), 2000);
+// setTimeout((name) => console.log(`${name} Are you Free Today`), 500, "Rohan");
 
-//cancelling with clearTimeout => setTimeout returns a times id which is used to cancle the setTimeout
-let timer = setTimeout(() => console.log("Hello world"), 5000);
-console.log(clearTimeout(timer));//this will stops the function from execution
+// //cancelling with clearTimeout => setTimeout returns a times id which is used to cancle the setTimeout
+// let timer = setTimeout(() => console.log("Hello world"), 5000);
+// console.log(clearTimeout(timer));//this will stops the function from execution
 
-//setInterval => calls the function at specified intervals untill clearInterval is called or window is closed
-let FruitName = "Orange";
-const timer1 = setInterval(function(color) {
-    console.log(`my favorite fruit is ${FruitName}`);
-    console.log(`which is ${color} color`);
-},4000, "orange");
+// //setInterval => calls the function at specified intervals untill clearInterval is called or window is closed
+// let FruitName = "Orange";
+// const timer1 = setInterval(function(color) {
+//     console.log(`my favorite fruit is ${FruitName}`);
+//     console.log(`which is ${color} color`);
+// },4000, "orange");
 
-// setInterval(() => console.log("Hello"), 2000);
-// setInterval(() => console.log("Bye Bye"), 3000);
-console.log(clearInterval(timer1));
+// // setInterval(() => console.log("Hello"), 2000);
+// // setInterval(() => console.log("Bye Bye"), 3000);
+// console.log(clearInterval(timer1));
 
-//parseInt, parseFloat, Number 
-//parseInt use to extract integer from string
-console.log(parseInt("123hello"));//123
-console.log(parseInt("23abc"));//23
-console.log(parseInt("abc123"));//NaN
-console.log(parseInt("123.23"));//123
+// //parseInt, parseFloat, Number 
+// //parseInt use to extract integer from string
+// console.log(parseInt("123hello"));//123
+// console.log(parseInt("23abc"));//23
+// console.log(parseInt("abc123"));//NaN
+// console.log(parseInt("123.23"));//123
 
-//parseFloat => use to get floating number , same as parseInt only diffrence is that it also returns decimal numbers
-console.log(parseFloat("123.450"));//123.450
-console.log(parseFloat("123abc.45"));//123
-console.log(parseFloat("123.345abc"));//123.345
-console.log(parseFloat("abc34.02"));//NaN
+// //parseFloat => use to get floating number , same as parseInt only diffrence is that it also returns decimal numbers
+// console.log(parseFloat("123.450"));//123.450
+// console.log(parseFloat("123abc.45"));//123
+// console.log(parseFloat("123.345abc"));//123.345
+// console.log(parseFloat("abc34.02"));//NaN
 
-//Number() convert string into valid Number
-console.log(Number("123"));//123
-console.log(Number("67.43"));//67.43
-console.log(Number("123abc"));//NaN
-console.log(Number(true));//1
-console.log(Number(false));//0
+// //Number() convert string into valid Number
+// console.log(Number("123"));//123
+// console.log(Number("67.43"));//67.43
+// console.log(Number("123abc"));//NaN
+// console.log(Number(true));//1
+// console.log(Number(false));//0
 
+//WebStorage => local Storage and session Storage
+//local storage => it can store data even after window is closed or reopened, data is stored inthe form 
+//of key-value pair and can access data on dame domain 
+localStorage.setItem("name", "Rohan")//set storage
+localStorage.setItem("class", "B.Tech")
+localStorage.setItem("class", "BSC")//update value using key
+let fullName = "John";
+let City = "Baheri";
+localStorage.setItem(fullName, City)//use variables
+localStorage.getItem("name")//get item
+localStorage.removeItem("name")//remove item
+localStorage.clear()//remove all data from local storage
 
+localStorage.length;//length of local storage
+localStorage.key(0)//key of local storage
 
+//session storage => temporary data storage 
+//replace session with local in above code most of code works same
+sessionStorage.setItem("Name", "John");
 
+//cookies => Cookies are small piece of that that are sent from a website to  users web browser
+//when a user visites a browser
+//create a cookies
+document.cookie = "Name: John";
+document.cookie = "class: B.tech";
+document.cookie = "Name: Rohan"; //update cookie
+document.cookie = "Name = Rohan; expires= thur,02 nov 2023 12:00:00 UTC";//set expiry date 
+const cooki = document.cookie;
+console.log(cooki);//read cookie
+
+//Important points to remember while doing js 
+//Refactor code => improve code quality
+
+//DRY => don't repeat yourself
