@@ -111,34 +111,35 @@ console.log(forEachMethod);
 //WebStorage => local Storage and session Storage
 //local storage => it can store data even after window is closed or reopened, data is stored inthe form 
 //of key-value pair and can access data on dame domain 
-localStorage.setItem("name", "Rohan")//set storage
-localStorage.setItem("class", "B.Tech")
-localStorage.setItem("class", "BSC")//update value using key
-let fullName = "John";
-let City = "Baheri";
-localStorage.setItem(fullName, City)//use variables
-localStorage.getItem("name")//get item
-localStorage.removeItem("name")//remove item
-localStorage.clear()//remove all data from local storage
+// localStorage.setItem("name", "Rohan")//set storage
+// localStorage.setItem("class", "B.Tech")
+// localStorage.setItem("class", "BSC")//update value using key
+// let fullName = "John";
+// let City = "Baheri";
+// localStorage.setItem(fullName, City)//use variables
+// localStorage.getItem("name")//get item
+// localStorage.removeItem("name")//remove item
+// localStorage.clear()//remove all data from local storage
 
-localStorage.length;//length of local storage
-localStorage.key(0)//key of local storage
+// localStorage.length;//length of local storage
+// localStorage.key(0)//key of local storage
 
-//session storage => temporary data storage 
-//replace session with local in above code most of code works same
-sessionStorage.setItem("Name", "John");
+// //session storage => temporary data storage 
+// //replace session with local in above code most of code works same
+// sessionStorage.setItem("Name", "John");
 
-//cookies => Cookies are small piece of that that are sent from a website to  users web browser
-//when a user visites a browser
-//create a cookies
-document.cookie = "Name: John";
-document.cookie = "class: B.tech";
-document.cookie = "Name: Rohan"; //update cookie
-document.cookie = "Name = Rohan; expires= thur,02 nov 2023 12:00:00 UTC";//set expiry date 
-const cooki = document.cookie;
-console.log(cooki);//read cookie
+// //cookies => Cookies are small piece of that that are sent from a website to  users web browser
+// //when a user visites a browser
+// //create a cookies
+// document.cookie = "Name: John";
+// document.cookie = "class: B.tech";
+// document.cookie = "Name: Rohan"; //update cookie
+// document.cookie = "Name = Rohan; expires= thur,02 nov 2023 12:00:00 UTC";//set expiry date 
+// const cooki = document.cookie;
+// console.log(cooki);//read cookie
 
 //Important points to remember while doing js 
 //Refactor code => improve code quality
 
 //DRY => don't repeat yourself
+
