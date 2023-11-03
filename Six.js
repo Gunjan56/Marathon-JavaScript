@@ -64,3 +64,52 @@ let num = isNaN(234);
 console.log(num);//false
 let num1 = isNaN("Hello");
 console.log(num1);//true
+
+//Arrow function does not have argument object, arguments is availabel with in regular functions
+const arrgu = function (){
+    console.log(`${arguments}`);
+}
+arrgu();//no error
+
+// const arguFun = (a,b)=> `${arguments}`;
+// arguFun()//arror
+
+//fix arguments problem in arrow function using rest parameter
+const argumetsFun = ((...arg) => console.log(`${arg}`));
+argumetsFun(2,3);
+
+//declaring variable shorthand
+//longhand 
+let a=20;
+let b=5;
+let c=10;
+//short hand method
+let x=10,y=5,z=20;
+
+//Nullish coalescing operator(??)=> logical operator that returns if its right hand side operand 
+//when its left hand side operand is null or undefined or else returns its left hand side operand
+let arr1 = [];
+if(arr1 === null || arr1 === undefined){
+    console.log('arr1 is null or undefined');
+}
+//if arr is null or undefined or have some value
+// let arr2;
+let arr2 = 10;
+const resultNullish = arr2 ?? "null or undefined";
+console.log(resultNullish);
+
+//optional chaining(?.)=>optional chaining operator allow us to access the value of a property 
+//that located deep within a chain of objects without explicitly checking if each reference in the chain is null or undefined
+//optional chaining
+const optionalChain = {
+    name: "John",
+    city: "Lucknow",
+    Friends: {
+        Name: "Rohan",
+        Name: "sohan",
+    },
+}
+const resultChaining = optionalChain.Friends?.Name;
+console.log(resultChaining);
+
+//
