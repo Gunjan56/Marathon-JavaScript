@@ -112,4 +112,50 @@ const optionalChain = {
 const resultChaining = optionalChain.Friends?.Name;
 console.log(resultChaining);
 
-//
+//short circuit => a type of logical operators when evaluting boolean expressions 
+//js provides two types of logical operators logical or || and logical and &&
+//logical or => checks for true value if first value is true then it will not check for second value if first value is not truthy value then it will check for both values
+//or(||) stopes as soon as truthy vlaue encountered
+const value1 = true;
+const value2 = false;
+console.log(value1 || value2);//true
+
+//and(&&) stops as soon as falsy value is encountered=>if first value is falsy then it will not check for second
+// let shortCircuitCheck = false;
+let shortCircuitCheck = true;
+let anotherAndValue = false;
+console.log(shortCircuitCheck && anotherAndValue);//false
+
+//Enhanced object litrals in ES6
+const server = "Node";
+const serverInfo = {
+    ["google" + server]: "server-one",
+    ["Meta" + server]: "server-two",
+};
+console.log(serverInfo);
+
+//function shorthand
+const person = {
+    Name: "john",
+    city: "delhi",
+    info(){
+        console.log(`my name is ${this.Name}`);
+        console.log(`i am from ${this.city}`);
+    },
+};
+
+//key short hand
+const serverName = "bing";
+const serverHost = "Microsoft";
+//normal way
+const serverInfo1 = {
+    serverName: serverName,
+    serverHost: serverHost,
+};
+
+//keyshort hand
+const serverInfo2 = {
+    serverName,
+    serverInfo,
+};
+console.log(serverInfo, serverInfo1, serverInfo2);
