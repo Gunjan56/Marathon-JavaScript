@@ -71,3 +71,50 @@ console.log(person1.greet());
 console.log(person1);
 
 //Inheritance or class inheritance
+//it is a fundamental concept of javascript that allow to acquire the properties and behaviours of other objects
+//we have parent vihicle => child class cycle, motorcycle, car those all can inherite the properties from parent class
+
+//extend keyword in class=> it is used to establish inheritance between classes
+//it allows inherit properties and methods from parent class
+
+//super method => super method refers to parent class, we call super method in constructor method means we call the parents constructor method and get acess to the parents properties and methods
+//inheritance example
+class Server{
+    constructor(serverRequest){
+        this.serverName = "Firebase";
+        this.serverLocation = "India";
+        this.serverMemory = "100GB";
+        this.serverRequest = serverRequest;
+        
+    }
+}
+class CallServer extends Server{
+    constructor(ln, dv, serverRequest) {
+        super(serverRequest);
+        this.yourLocation = ln;
+        this.device = dv;        
+    }
+}
+const newRequest = new CallServer("India", "Chrome", 10);
+console.log(newRequest);
+
+//using super.method()
+//class with only methods => if there is no properties in your class there is no need to 
+//use constructor function , simply don’t write constructor function
+class Personn{
+    intro(){
+        console.log("Hello my name is John");
+        console.log('I am a software engineer');
+    }
+}
+class Person1 extends Personn{
+    greet(){
+        console.log("Hello everyone");
+        super.intro()//super.method
+    }  
+}
+const personinfo = new Person1();
+console.log(personinfo.greet());
+
+
+//Arrow function have no super.method
