@@ -118,3 +118,86 @@ console.log(personinfo.greet());
 
 
 //Arrow function have no super.method
+
+//prototypal inheritance and prototypal chain
+//javascript objects can inherit properties and methods from others=> it is based on the concept of protptypes
+//where each object has an internal link to another objects called its prototype
+function Person12(name){
+    this.name = name;
+}
+Person12.prototype.greet = function(){
+    console.log(`hello my name is ${this.name}`);
+}
+const perso = new Person12("John");
+console.log(perso.greet());
+
+//prototypal chain => In js the null value is the end of the prototypal chain
+//__proto__.__proto__.__proto__=> it looks for property and method of objects untill it finds null
+console.log(Person.__proto__);
+
+//inheritance chain => you can extend the inheritance chain as much as you want, setting parent, grndparent, greatgrand parent
+//classes and so on
+class GrandParent{
+    constructor(){
+        this.fullName = "John";
+    }
+}
+class Parent extends GrandParent{
+    constructor(){
+        super();
+    }
+}
+class Child extends GrandParent{
+    constructor(){
+        super();
+    }
+}
+const family = new Child();
+console.log(family);
+
+//method overriding => you can override a method by redefining it in a class or object
+
+//static method => it belongs to the class rather than an instance of that class, static class methods
+//are defined on the class itself you can't call an static method on an object, it is accessible only on an object class
+class Student{
+    constructor(fn, cn){
+        this.fn = fn;
+        this.cn = cn;
+    }
+    static intro(fn ,cn){
+        console.log(`my name is ${fn}`);
+        console.log(`i am student of class ${cn}`);
+    }
+}
+const info = new Student("john", "doe");
+//console.log(info.intro());//error static method can't be accessible
+
+//getter and setter => getter and setter methods is used to define bojects properties with custom behaviour
+
+//getter method => is used to retrive the value of a property, defined using the get keyword
+
+//setter method => is used to set the value of property, defined using the set keyword
+
+class Employee{
+    constructor(name, age, phoneNo){
+        this.name = name;
+        this.age = age;
+        this.phoneNo = phoneNo;
+    }
+    get fullInfo(){
+        return `Employee Name: ${this.name}\n Employee age: ${this.age} \n Employee phoneNo: ${this.phoneNo}`;
+    }
+    /**
+     * @param {any} add
+     */
+    set employeeAddress(add){
+        return this.EmployeeAddress = add;
+    }
+
+}
+const employee1 = new Employee("John", 34, 9076854212);
+console.log(employee1.fullInfo);//getter is used as property so don't use ();
+employee1.employeeAddress = "delhi";
+console.log(employee1);//we set a new property for Employee class
+
+
