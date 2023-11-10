@@ -1,7 +1,7 @@
 //OOps => object oriented programming
 //js class is based on objects which contain data and class is used to manipulate that data in a structured way
 //four priciples of OOPs
-//Abstraction,polymorphism, incapsulation, Inheritance
+//Abstraction,polymorphism, Encapsulation, Inheritance
 //class & object => class is a blueprint or template that defines the structure of objects
 //it describes the methods and properties that objects created from class will have.
 //An object is an instance of class
