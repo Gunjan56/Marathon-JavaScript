@@ -60,5 +60,12 @@ myPromise.then((response) =>{
 
 //API => Aplication Programing Interface
 //set of rules and protocols that allow different software applications to communicate or interct with each other
- 
+//An API is a set of rules that allow different computers to interect with each other
+//share information and perform specific actions 
+//Working with api
+//XML, Fetch api
+//Free API Link : https://github.com/public-apis/public-apis
+//different methods of api=> GET=> used to retrieve data from server, POST=> used to send data to the server
+//,PUT=> used to update or replace an existing resource on the server, DELETE=> used to deletion of resource on the server
 
+//XHR or XMLHttpRequest Method => it anables the exchange of data between client and the server without requiring a full page reload
