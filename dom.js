@@ -95,3 +95,8 @@ let  p = document.querySelector('.par1');
 p.innerHTML = "Hello Good morning";
 console.log(p);
 
+//Section 5 => working with attrubutes
+
+//Section 6 => Manipulating Elements Styles
+
+//Section 7 => Working with events
