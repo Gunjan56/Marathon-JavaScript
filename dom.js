@@ -45,3 +45,53 @@ const htmlCollection = document.getElementsByClassName("li");
 console.log(htmlCollection);
 
 //section 2 => Traversing Elements
+//Get the parents Element
+//parent node property is used to acess the parent node of the dom element , it returns the parent node as an object
+//parentNode is readonly , parentElement property is used to access the parent element of an given element
+let note = document.querySelector(".note");
+console.log(note.parentNode);//read only
+
+let parent = document.querySelector(".note");
+console.log(parent.parentElement);
+
+//Getting child element of a node
+//childNodes => childNodes property returns the collection of all the child nodes of a specified parent node
+//children => returns a collection of only direct child elements of a specified parent element
+let parentOfChildNode = document.querySelector(".mainParent");
+console.log(parentOfChildNode.childNodes);//childNode returns comment, text, and other nodes also
+//filter childNode
+let childNodes = parentOfChildNode.childNodes;
+console.log(Array.from(childNodes).filter((node) => node.nodeType === Node.ELEMENT_NODE));
+
+//children
+let parentChild = document.querySelector(".mainParent");
+console.log(parentChild.children);
+
+//getting SiblingElements
+let siblingElement = document.querySelector(".Child");
+console.log(siblingElement.nextElementSibling);//returns the next sibling
+console.log(siblingElement.previousElementSibling);//returns the previous sibling element
+console.log(siblingElement.nextSibling);
+console.log(siblingElement.previousSibling);
+
+//Section 3 => Manipulating Elements
+//textContent, innerText, innerHTML
+
+//innerText => it represents the visible text content of an element and returns the rendered text content,
+//excluding any style or html tags, when we set innerText property it overwrites the existing content and any child element within the element
+const innertext = document.querySelector(".par");
+console.log(innertext);
+innertext.innerText = "Hello JavaScript=> I just chnge the text";
+innertext.innerText = "hello all i am using italic text by innerText property";//this is overwriting above text
+
+//textContent => it represents the text content of an element it returns the raw text content including spaces linebreak, and it does not consider css styling
+const textCon = document.querySelector('.par');
+console.log(textCon.textContent);//it returns the only text content of element's inside
+textCon.textContent = "hello js developers!!!";//for the first html element it is overwriting the original text
+
+//innerHTML=> it represents the HTML content with in an element including any child elements and thier html markup.
+let  p = document.querySelector('.par1');
+// p.innerHTML = "Happy Coding";
+p.innerHTML = "Hello Good morning";
+console.log(p);
+
