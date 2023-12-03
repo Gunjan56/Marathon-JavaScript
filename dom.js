@@ -96,7 +96,51 @@ p.innerHTML = "Hello Good morning";
 console.log(p);
 
 //Section 5 => working with attrubutes
+//HTML attribute and dom object's Properties
+//setAttribute=> set the value of a specified attribute on a element
+//getAttribute=> get the value of an attribute on an element
+//RemoveAttribute=> remove an attribute from a specified element
+//hasAttribute=> check if an element has a spcify attribute of not
+
+
+
+
 
 //Section 6 => Manipulating Elements Styles
+//style property=> get or set inline style of an element
+//getComputedStyle=>return the computed style of an element
+//className Property=> return a list of space sperated css classes
+//classList Property=> manipulate css classes of an element
+//Elements width and height=> get the width and height of an element
 
 //Section 7 => Working with events
+//javaScript Events
+//Handling events
+//page load events
+//load event
+//DOMContentLoaded
+//beforeunload event
+//unload event
+//MOuse events
+//keyboard events
+//scroll events
+//Focus events
+//scrollIntoView events
+//haschange event
+//event delegaton
+//dispatch Event
+//cuatom events
+//MutationObserver
+
+//section 8 => Scripting Web forms
+//javaScript Form
+//Radio button
+//check box
+//select Box
+//Add/Remove Options
+//Removing Items from <select> element conditionally
+//Handling change event
+//Handling input event
+
+
+//Projects in next chapter 😁😀
