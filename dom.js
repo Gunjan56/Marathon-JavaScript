@@ -1,4 +1,4 @@
-//dom => document object model 
+//dom => document object model
 //its a programing interface for web documents which means it represents the page so that programs can change documents style ,structure and content
 //its like a tree structure when page is loaded to the browser
 //What we can do with dom?=> with the object model, javaScript get all the power it needs to create dynamic HTML
@@ -36,7 +36,7 @@
 
 // //HTML collection and nodeList => Html collection is a collection of document elements, a nodeList is a collection of document nodes (element nodes, attribute nodes and text nodes)
 // //HTML collections are typically returned by properties and methods that query the dom like- getElementByTagName, getElementByClassName
-// //nodeList is typically returned by more advanced methods such as `querySelectorAll` that allow you to use CSS selectors to query the DOM. 
+// //nodeList is typically returned by more advanced methods such as `querySelectorAll` that allow you to use CSS selectors to query the DOM.
 // const nodeList = document.querySelector(".target");
 // // const child = nodeList.childNodes;
 // console.log(child);
@@ -113,41 +113,107 @@
 // const res = hasAtt.hasAttribute('class');
 // console.log(res);
 
-
 //Section 5 => Manipulating Elements Styles
 //style property=> get or set inline style of an element
-const domStyle = document.querySelector('.main');
-domStyle.style.height = '200px';
-domStyle.style.width = '300px';
-domStyle.style.margin = 'auto';
-domStyle.style.marginTop = '20px';
-domStyle.style.justifyContent = 'center';
-domStyle.style.display = 'flex';
-domStyle.style.flexWrap = 'wrap';
-domStyle.style.backgroundColor = 'red';
+const domStyle = document.querySelector(".main");
+domStyle.style.height = "200px";
+domStyle.style.width = "300px";
+domStyle.style.margin = "auto";
+domStyle.style.marginTop = "20px";
+domStyle.style.justifyContent = "center";
+domStyle.style.display = "flex";
+domStyle.style.flexWrap = "wrap";
+domStyle.style.backgroundColor = "red";
 //getComputedStyle=>return the computed style of an element
-let style = getComputedStyle(domStyle,'backgroundColor');
+let style = getComputedStyle(domStyle, "backgroundColor");
 // console.log(style);//it will return window object
 let styleRe = getComputedStyle(domStyle);
 console.log(styleRe.color);
-console.log(styleRe.display);//it will return what we want
+console.log(styleRe.display); //it will return what we want
 //className Property=> return a list of space sperated css classes
 // let classNa = domStyle.className;
 // console.log(classNa);
 //classList Property=> manipulate css classes of an element
-domStyle.classList.add('new');
+domStyle.classList.add("new");
 console.log(domStyle.className);
 //Elements width and height=> get the width and height of an element
 let width = domStyle.offsetWidth;
 let height = domStyle.offsetHeight;
-console.log({width, height});
-
+console.log({ width, height });
 
 //Section 7 => Working with events
-//javaScript Events
-//Handling events
-//page load events
+//javaScript Events => Introduce use to javaScript events, The event models and how to handle those events
+//Handling events=> when an event ocurs you can create an event handler which is a piece of code that will execute to respond to that event. an event handler is also known as event listener , it Is function with an explicit name if you intend to reuse it an event can be handled by one or multiple event handlers
+//ways to assign event handlers
+//1.onclick
+let onClickEvent = document.querySelector(".btn");
+function onClickEventBtn() {
+  onClickEvent.textContent = "You Clicked Me!";
+}
+//2.addEventListener=> it accepts the three arguments an event name, and event handler function and a boolean value that instructs the method to call the event handler during the capture phase(true) or during the bubble(false) phase
+onClickEvent.addEventListener(
+  "click",
+  () => {
+    onClickEvent.textContent = "You Just Clicked Me!";
+  },
+  false
+);
+onClickEvent.addEventListener(
+  "click",
+  (event) => {
+    alert("You Clicked Me Again!");
+  },
+  false
+);
+//3. removeEventListener() =>Removes an eventListener That was added by addEventListener. you need to pass same arguments as you used to pass For addEventListener
+function greet() {
+  onClickEvent.textContent = "Hello Js Developer";
+}
+onClickEvent.addEventListener("click", greet);
+
+onClickEvent.removeEventListener("click", greet); //Note => using the anonymous event listener will not work
+// onClickEvent.removeEventListener('click', function removeClickEvent(){
+//     console.log("Clicked me");//this will not work
+// })
+
+//page load events => to handle the page load events we can call the addEventListener on teh document object
+document.addEventListener("DOMContentLoaded", () => {
+  //handle DOMContentLoaded
+  console.log("The page is fully loaded");
+});
+document.addEventListener("load", () => {
+  //handle load event
+  console.log("The page is fully loaded");
+});
+
+document.addEventListener("beforeunload", (event) => {
+  //handle before unload event
+  event.preventDefault();
+  event.returnValue = "";
+});
+
+document.addEventListener("unload", (event) => {
+  //handle unload event
+  //send analytic data
+});
 //load event
+//windows load event=> for the window object the load event is fired when the whole webpage is loaded
+//to handle the load event you register the eventListener using addEventListener
+window.addEventListener("load", (event) => {
+  console.log("page has fully loaded");
+});
+//by using onload property
+window.onload = (event) => {
+  console.log("Page loaded"); //it is good practice to use addEventListener
+};
+
+//the image's load event=> load event also fires on Images
+let img = document.querySelector("#logo");
+img.addEventListener("load", (event) => {
+  console.log("logo has been loaded");
+});
+
+img.src = "images.jpg";
 //DOMContentLoaded
 //beforeunload event
 //unload event
@@ -171,6 +237,5 @@ console.log({width, height});
 //Removing Items from <select> element conditionally
 //Handling change event
 //Handling input event
-
 
 //Projects in next chapter 😁😀

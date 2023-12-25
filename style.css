@@ -1,9 +1,17 @@
-body{
-    display: flex;
-    background-color: black;
-    color: white;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    margin: auto;
-    padding: 0;
+body {
+  background-color: black;
+  color: white;
+  box-sizing: border-box;
+  margin: auto;
+  padding: 0;
+}
+.btn {
+  height: 40px;
+  width: 110px;
+  color: white;
+  background-color: brown;
+  margin-top: 15%;
+  margin-left: 95vmin;
+  cursor: pointer;
+  border-radius: 8px;
 }
