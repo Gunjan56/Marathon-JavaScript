@@ -451,7 +451,7 @@ form.addEventListener("submit", function (event) {
   );
   // if valid, submit the form.
   if (nameValid && emailValid) {
-    alert("Demo only. No form was posted.");
+    alert("only for Practice");
   }
 });
 
