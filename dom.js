@@ -322,75 +322,141 @@
 //   console.log("Report menu item was clicked");
 // });
 // Note=>Instead of having multiple event handlers we can just asign single event handler to handle all the click events
-let menu = document.querySelector("#menu");
-menu.addEventListener("click", (event) => {
-  let target = event.target;
-  switch (target.id) {
-    case "home":
-      console.log("Home menu item was clicked");
-      break;
+// let menu = document.querySelector("#menu");
+// menu.addEventListener("click", (event) => {
+//   let target = event.target;
+//   switch (target.id) {
+//     case "home":
+//       console.log("Home menu item was clicked");
+//       break;
 
-    case "Dashboard":
-      console.log("Dashboard menu item was clicked");
-      break;
-    case "report":
-      console.log("Report menu item was clicked");
-      break;
-  }
-});
+//     case "Dashboard":
+//       console.log("Dashboard menu item was clicked");
+//       break;
+//     case "report":
+//       console.log("Report menu item was clicked");
+//       break;
+//   }
+// });
 //dispatch Event=>lets learn how to programatically create and dispatch events using event constructor and dispatch event method
 //to create a new event you can use Event constructor
 // let event = new Event(type, [, options]);
-let btn2 = document.querySelector(".btn2");
-btn2.addEventListener("click", () => {
-  alert("Mouse Clicked!");
-});
-let clickEvent = new Event("click");
-btn2.dispatchEvent(clickEvent);
-//cuatom events=> jaavascript custom events such as creating custom events and dispatching it.lets change the background color of body while clicking on a button
-let Btn1 = document.querySelector("#Btn1");
-let body = document.querySelector("body");
-let currMode = "light"; //dark
+// let btn2 = document.querySelector(".btn2");
+// btn2.addEventListener("click", () => {
+//   alert("Mouse Clicked!");
+// });
+// let clickEvent = new Event("click");
+// btn2.dispatchEvent(clickEvent);
+// //cuatom events=> jaavascript custom events such as creating custom events and dispatching it.lets change the background color of body while clicking on a button
+// let Btn1 = document.querySelector("#Btn1");
+// let body = document.querySelector("body");
+// let currMode = "light"; //dark
 
-Btn1.addEventListener("click", (event) => {
-  if (currMode === "light") {
-    currMode = "dark";
-    body.classList.add("dark");
-    body.classList.remove("light");
-  } else {
-    currMode = "light";
-    body.classList.add("light");
-    body.classList.remove("dark");
-  }
-});
+// Btn1.addEventListener("click", (event) => {
+//   if (currMode === "light") {
+//     currMode = "dark";
+//     body.classList.add("dark");
+//     body.classList.remove("light");
+//   } else {
+//     currMode = "light";
+//     body.classList.add("light");
+//     body.classList.remove("dark");
+//   }
+// });
 
 //MutationObserver=> lets learn about how to use the js mutationObserver API to watch the changes being made to the DOm tree
 //The Mutation Observer API allows you to monitor for changes being made to Dom tree, When the Dom node change you can invoke a callback function to react to the changes
 //first, difine the callback function that will excute when dom changes
 //second create a MutationObserver object and pass the callback to the mutation observer constructor
 //Third, call the observe() method to stsart observing the dom changes
-function waitForElement(selector) {
-  return new Promise((resolve, reject) => {
-    if (document.querySelector(selector)) {
-      return resolve(element);
-    }
+// function waitForElement(selector) {
+//   return new Promise((resolve, reject) => {
+//     if (document.querySelector(selector)) {
+//       return resolve(element);
+//     }
 
-    const observer = new MutationObserver(() => {
-      const element = document.querySelector(selector);
-      if (element) {
-        resolve(element);
-        observer.disconnect();
-      }
-    });
-    observer.observe(document.body, {
-      chidList: true,
-      subtree: true,
-    });
-  });
-}
+//     const observer = new MutationObserver(() => {
+//       const element = document.querySelector(selector);
+//       if (element) {
+//         resolve(element);
+//         observer.disconnect();
+//       }
+//     });
+//     observer.observe(document.body, {
+//       chidList: true,
+//       subtree: true,
+//     });
+//   });
+// }
 //section 8 => Scripting Web forms
-//javaScript Form=>
+//javaScript Form=>lets learn about js form API
+
+// show a message with a type of the input
+function showMessage(input, message, type) {
+  // get the small element and set the message
+  const msg = input.parentNode.querySelector("small");
+  msg.innerText = message;
+  // update the class for the input
+  input.className = type ? "success" : "error";
+  return type;
+}
+
+function showError(input, message) {
+  return showMessage(input, message, false);
+}
+
+function showSuccess(input) {
+  return showMessage(input, "", true);
+}
+
+function hasValue(input, message) {
+  if (input.value.trim() === "") {
+    return showError(input, message);
+  }
+  return showSuccess(input);
+}
+
+function validateEmail(input, requiredMsg, invalidMsg) {
+  // check if the value is not empty
+  if (!hasValue(input, requiredMsg)) {
+    return false;
+  }
+  // validate email format
+  const emailRegex =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  const email = input.value.trim();
+  if (!emailRegex.test(email)) {
+    return showError(input, invalidMsg);
+  }
+  return true;
+}
+
+const form = document.querySelector("#signup");
+
+const NAME_REQUIRED = "Please enter your name";
+const EMAIL_REQUIRED = "Please enter your email";
+const EMAIL_INVALID = "Please enter a correct email address format";
+
+form.addEventListener("submit", function (event) {
+  // stop form submission
+  event.preventDefault();
+
+  // validate the form
+  let nameValid = hasValue(form.elements["name"], NAME_REQUIRED);
+  let emailValid = validateEmail(
+    form.elements["email"],
+    EMAIL_REQUIRED,
+    EMAIL_INVALID
+  );
+  // if valid, submit the form.
+  if (nameValid && emailValid) {
+    alert("Demo only. No form was posted.");
+  }
+});
+
 //Radio button
+
 //check box
 //select Box
 //Add/Remove Options
