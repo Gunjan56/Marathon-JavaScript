@@ -1,17 +1,113 @@
 body {
-  background-color: black;
-  color: white;
   box-sizing: border-box;
   margin: auto;
   padding: 0;
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
 }
 .btn {
   height: 40px;
   width: 110px;
   color: white;
   background-color: brown;
-  margin-top: 15%;
+  margin-top: 5%;
   margin-left: 95vmin;
   cursor: pointer;
   border-radius: 8px;
+}
+img {
+  display: inline;
+  object-fit: cover;
+}
+a {
+  /* color: white; */
+  font-size: 20px;
+}
+#scrollDemo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 300px;
+  background-color: yellow;
+  color: black;
+  overflow: auto;
+}
+#scrollDemo p {
+  /* show the scrollbar */
+  height: 300px;
+  width: 300px;
+}
+.container {
+  height: 350px;
+  width: 350px;
+  background-color: yellow;
+  color: black;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.container ul {
+  height: 300px;
+  width: 300px;
+}
+#Left {
+  background-color: brown;
+  padding: 10px;
+  color: white;
+  border-radius: 8px;
+}
+#Top {
+  background-color: brown;
+  padding: 10px;
+  color: white;
+  border-radius: 8px;
+}
+
+.event {
+  background-color: brown;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+.Reset {
+  height: 40px;
+  width: 110px;
+  color: white;
+  background-color: brown;
+  margin-top: 5%;
+  margin-left: 100vmin;
+  cursor: pointer;
+  border-radius: 8px;
+  display: inline;
+}
+#Btn1 {
+  background-color: brown;
+  padding: 10px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.dark {
+  background-color: black;
+  color: white;
+}
+.light {
+  background-color: white;
+  color: black;
+}
+.btn2 {
+  background-color: brown;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
 }
