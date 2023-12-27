@@ -111,13 +111,13 @@ a {
   border-radius: 8px;
   cursor: pointer;
 } */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
-body {
+/* body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1rem;
@@ -126,9 +126,9 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-}
+} */
 
-.container {
+/* .container {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
@@ -148,11 +148,11 @@ form h1 {
   font-weight: normal;
   text-align: center;
   color: #111;
-}
+} */
 
 /*! form.css v1.0 | MIT License | https://www.javascripttutorial.net/ */
 
-.field {
+/* .field {
   margin-bottom: 0.75rem;
 }
 
@@ -165,10 +165,10 @@ label {
   margin-bottom: 5px;
   vertical-align: top;
   width: 100%;
-}
+} */
 
 /* input, textarea */
-input,
+/* input,
 textarea,
 select {
   border: solid 1px #ccc;
@@ -178,9 +178,9 @@ select {
   width: 100%;
   font-family: inherit;
   font-size: 1rem;
-}
+} */
 
-input::placeholder {
+/* input::placeholder {
   color: #c2c2c2;
 }
 
@@ -197,10 +197,10 @@ textarea[disabled] {
   box-shadow: none;
   color: #7a7a7a;
   cursor: not-allowed;
-}
+} */
 
 /* input error */
-input.error,
+/* input.error,
 textarea.error,
 select.error {
   border-color: #dc3545;
@@ -210,10 +210,10 @@ input.error:focus,
 textarea.error:focus,
 select.error:focus {
   box-shadow: 0 0 0 0.25rem rgb(220 53 69 / 25%);
-}
+} */
 
 /* input success */
-input.success,
+/* input.success,
 textarea.success,
 select.success {
   border-color: #198754;
@@ -222,10 +222,10 @@ select.success {
 input.success:focus,
 textarea.success:focus {
   box-shadow: 0 0 0 0.25rem rgb(25 135 84 / 25%);
-}
+} */
 
 /* button */
-button {
+/* button {
   background: #0d6efd;
   color: #fff;
   border-radius: 0.25rem;
@@ -241,7 +241,7 @@ button {
 button:hover {
   background: #0b5ed7;
   border-color: #0a58ca;
-  cursor: pointer;
+  cursor: pointer; 
 }
 
 button:focus {
@@ -250,19 +250,19 @@ button:focus {
   background-color: #0b5ed7;
   border-color: #0a58ca;
   box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 50%);
-}
+}*/
 
 /* radio  & checkbox*/
-label.radio,
+/* label.radio,
 label.checkbox {
   width: auto;
   cursor: pointer;
   display: inline-block;
   position: relative;
   border-radius: 5px;
-}
+} */
 
-.stack label.radio,
+/* .stack label.radio,
 .stack label.checkbox {
   display: block;
   margin-left: auto;
@@ -277,18 +277,18 @@ input[type="checkbox"],
 input[type="radio"] {
   vertical-align: baseline;
   width: auto;
-}
+} */
 
 /* vertical form */
-.vertical label,
+/* .vertical label,
 .vertical input,
 .vertical textarea {
   display: block;
   width: 100%;
-}
+} */
 
 /* horizontal form */
-.horizontal .field {
+/* .horizontal .field {
   display: grid;
   grid-template-columns: 20% 1fr;
   gap: 1rem 1rem;
@@ -304,16 +304,16 @@ input[type="radio"] {
 .horizontal .field label.checkbox {
   grid-column: 2 / 3;
   text-align: left;
-}
+} */
 
-.horizontal .field input,
+/* .horizontal .field input,
 .horizontal .field button,
 .horizontal .field small {
   grid-column: 2 / 3;
 }
 
 /* Utility classes*/
-.half {
+/* .half {
   width: 50%;
 }
 .quarter {
@@ -322,8 +322,79 @@ input[type="radio"] {
 
 .full {
   width: 100%;
-}
+} 
 
 .error {
   color: #dc3545;
+} */
+/* reference: https://www.sanwebe.com/2014/08/css-html-forms-designs*/
+/* body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
 }
+
+#container {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  width: 400px;
+}
+
+form {
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 16px;
+}
+
+label,
+select {
+  display: block;
+  margin: 10px 0;
+}
+
+select {
+  width: 100%;
+  font-size: 1em;
+  padding: 5px;
+}
+
+button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3%;
+  background: #007bff;
+  border-bottom: 2px solid #007bff;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #0069d9;
+  cursor: pointer;
+}
+
+form input[type="text"] {
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 2%;
+  border: 1px solid #ccc;
+  padding: 3%;
+  color: #555;
+  font-size: 1em;
+}
+
+form input[type="text"]:focus {
+  box-shadow: 0 0 5px #f0db4f;
+  padding: 3%;
+  border: 1px solid #f0db4f;
+} */
