@@ -596,10 +596,22 @@
 // });
 
 //Handling input event=>lets learn about js input event that fires whenever the value of input select and textarea changes
-const message = document.querySelector("#message");
-const result = document.querySelector("#result");
-message.addEventListener("input", function () {
-  result.textContent = this.value;
-});
+// const message = document.querySelector("#message");
+// const result = document.querySelector("#result");
+// message.addEventListener("input", function () {
+//   result.textContent = this.value;
+// });
+
+const btn = document.querySelector("#btn");
+const fact = document.querySelector("#fact");
+const URL = "https://cat-fact.herokuapp.com/facts/";
+
+const getCatFact = async () => {
+  let response = await fetch(URL);
+  let data = await response.json();
+  fact.innerText = data[0].text;
+};
+
+btn.addEventListener("click", getCatFact);
 
 //Projects in next chapter 😁😀
