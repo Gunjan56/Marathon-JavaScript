@@ -8,6 +8,8 @@ let name1 = {
   firstName: "John",
   lastName: "Doe",
 };
+document.body.style.background =
+  "linear-gradient(90deg, #bd79f1, #00cbff, #69e684)";
 const printName = function (hometowm, state, Country) {
   console.log(
     this.firstName +
@@ -26,6 +28,7 @@ printMyName("U.P", "India"); //built-in bind method
 
 Function.prototype.mybind = function (...args) {
   let obj = this;
+  console.log(obj);
   let params = args.slice(1);
   return function (...args2) {
     obj.apply(args[0], [...params, ...args2]);
