@@ -152,3 +152,5 @@ btn.addEventListener("click", (event) => {
   }
   console.log("You are done with this loop!!@");
 });
+
+//Throttling in js =>
