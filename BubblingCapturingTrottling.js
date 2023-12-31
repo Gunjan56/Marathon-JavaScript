@@ -132,25 +132,47 @@ const child = document.querySelector(".child");
 
 //PreventDefault()=> It stops the default behaviour of browser or Events like if we click on a link the it opens in another tab or in same tab, or if we click on a button then it performs some action like it will submit the form by deafult or refresh our page
 //so to stop these behaviours we use preventDefault method obviously it will take an event to stop the dafult behaviour of that event
-const btn = document.querySelector(".btn");
-const a = document.querySelector("a");
+// const btn = document.querySelector(".btn");
+// const a = document.querySelector("a");
 
-a.addEventListener("click", (e) => {
-  e.preventDefault(); //now it is not opening the my style.css file but performing the next action like log in console cliked
+// a.addEventListener("click", (e) => {
+//   e.preventDefault(); //now it is not opening the my style.css file but performing the next action like log in console cliked
+//   console.log("Clicked");
+//   let counter = 0;
+//   counter++;
+//   console.log(counter);
+// });
+
+// btn.addEventListener("click", (event) => {
+//   //now this function will stop the browser top refresh the page while clicking on the button inside the form beacuse forms default bahaviour is to post or get date while submitting
+//   event.preventDefault();
+//   var n = 10;
+//   for (let i = 0; i <= n; i++) {
+//     console.log(i);
+//   }
+//   console.log("You are done with this loop!!@");
+// });
+
+//Throttling in js =>throttling is a technique that limits how often a function can be called in a given period of time
+//So it is useful for improving the performance and responsiveness of web pages that have event listener that triggers heavy or
+//expensive operations like animation, scrolling,resizing or fetching data etc
+
+const throttling = function (fn, d) {
+  return function (...args) {
+    document.querySelector("#throt").disabled = true;
+    document.querySelector("#throt").style.opacity = "0.5";
+    setTimeout(() => {
+      fn();
+    }, d);
+  };
+};
+
+const thrott = throttling(() => {
+  document.querySelector("#throt").disabled = false;
+  document.querySelector("#throt").style.opacity = "1";
   console.log("Clicked");
-  let counter = 0;
-  counter++;
-  console.log(counter);
-});
+}, 4000);
 
-btn.addEventListener("click", (event) => {
-  //now this function will stop the browser top refresh the page while clicking on the button inside the form beacuse forms default bahaviour is to post or get date while submitting
-  event.preventDefault();
-  var n = 10;
-  for (let i = 0; i <= n; i++) {
-    console.log(i);
-  }
-  console.log("You are done with this loop!!@");
-});
-
-//Throttling in js =>
+const btnClick = document.querySelector("#throt");
+btnClick.addEventListener("click", thrott); //So when user click on this button then after 4 sec it logs in console clicked and during this period of time
+//button is enabled which means click evetn is not accessible and after the 4 sec it is again accessible

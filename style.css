@@ -34,6 +34,15 @@ a {
   font-weight: 400;
   cursor: pointer;
 }
+#throt {
+  background-color: brown;
+  border-radius: 8px;
+  color: white;
+  padding: 10px;
+  margin: 20px;
+  font-weight: 400;
+  cursor: pointer;
+}
 /*
 
 .main {
