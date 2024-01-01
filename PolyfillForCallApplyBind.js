@@ -87,5 +87,16 @@ Function.prototype.myBind = function (...args) {
   //   con.fn = this;
   //   con.fn(...args);
 };
+
+//first class function
 const functionBind = greet.myBind(user);
 functionBind("India");
+
+function multiply(num) {
+  return num * num;
+}
+
+function square(num) {
+  console.log("square is " + num(5));
+}
+square(multiply);
