@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createTaskElement(task) {
     const taskElement = document.createElement("div");
+
     taskElement.classList.add("task");
 
     const taskContentElement = document.createElement("div");
