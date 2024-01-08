@@ -1,6 +1,8 @@
 //Debouncing in js
-//It is powerfull technique that used to optimize event handling by delaying the execution of a function untill after a specified period of activity
-//it helps prevent excessive function calls triggered by rapid events, like keystrokes or scroll movements
+//It is powerfull technique that used to optimize event handling by delaying the execution of a f
+//unction untill after a specified period of activity
+//it helps prevent excessive function calls triggered by rapid events, like keystrokes or scroll 
+//movements
 
 let counter = 0;
 function getData() {

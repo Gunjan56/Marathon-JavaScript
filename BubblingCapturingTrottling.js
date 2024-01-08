@@ -1,7 +1,7 @@
 //Event Bubbling , Capturing and Propagation and Immediate Propagation , stopPropagation and preventDefault()=>
 //Event bubbling => It is a Concept like Bubbles Goes from Bottom to up Which means I have created a Grand Parent Div Followed By Parent din And then a child div So Basically Event bubbling in this case
 //will go from child div then parent and then grand parent obviously by adding a event listener if i click on my child div then first it will call child then parent then grand parent div
-//Lets see an example => i Hane created three divs into my index.html
+//Lets see an example => i Have created three divs into my index.html
 const grandParent = document.querySelector(".grandParent");
 const parent = document.querySelector(".parent");
 const child = document.querySelector(".child");
@@ -175,4 +175,4 @@ const thrott = throttling(() => {
 
 const btnClick = document.querySelector("#throt");
 btnClick.addEventListener("click", thrott); //So when user click on this button then after 4 sec it logs in console clicked and during this period of time
-//button is enabled which means click evetn is not accessible and after the 4 sec it is again accessible
+//button is enabled which means click event is not accessible and after the 4 sec it is again accessible

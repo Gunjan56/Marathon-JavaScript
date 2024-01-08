@@ -1,6 +1,7 @@
 //lets learn currying in javaScript
 //currying is a advanced function in javaScript which is used for the
-//manipulation of functions , arguments and parameters. carrying takes a function that recieves more than one parameter and breaks it into series of unray(one parameter) functions. hence , the currying function takes only one parameter at a time
+//manipulation of functions , arguments and parameters. carrying takes a function that recieves more 
+//than one parameter and breaks it into series of unray(one parameter) functions. hence , the currying function takes only one parameter at a time
 //Uses of Currying in JS
 //Currying is helpful in event handling
 //Example function(a,b) into f(a)(b)=> currying

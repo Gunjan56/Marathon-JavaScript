@@ -17,7 +17,8 @@ setTimeout(() => {
 },3000);
 console.log("Hello JS developers");//it will executed first then after 3 second setTimeout code wil be executed
 
-//Event Loop => it is the key part of how javascript handles async code, IT is like traffic controller that manages the flow of code execution
+//Event Loop => it is the key part of how javascript handles async code, IT is like traffic 
+//controller that manages the flow of code execution
 //in non blocking way by placing function in a queue and executing them one by one when they are ready
 
 //Now Lets Learn About AJAX => Asynchronous Javascript and XML
@@ -61,7 +62,7 @@ myPromise.then((response) =>{
 //API => Aplication Programing Interface
 //set of rules and protocols that allow different software applications to communicate or interct with each other
 //An API is a set of rules that allow different computers to interect with each other
-//share information and perform specific actions 
+//share information and perform specific actions
 //Working with api
 //XML, Fetch api
 //Free API Link : https://github.com/public-apis/public-apis
@@ -73,8 +74,8 @@ myPromise.then((response) =>{
 //onreadystatechange, onload, onerror, onprogress, ontimeout
 
 //Country API example
-//Country api example //api url : https://restcountries.com/v3.1/name/{name} 
-//"https://restcountries.com/v3.1/name/russia => this api endpoint will give you russia information 
+//Country api example //api url : https://restcountries.com/v3.1/name/{name}
+//"https://restcountries.com/v3.1/name/russia => this api endpoint will give you russia information
 
 //Create a new XMLHttpRequest object
 let request = new XMLHttpRequest();
@@ -83,48 +84,48 @@ let request = new XMLHttpRequest();
 request.open("GET", "https://restcountries.com/v3.1/name/russia");
 // request.responseType = "json";
 
-request.onload = function(){
-    console.log(request.response);
-    console.log(JSON.parse(request.response));
-    console.log(request.status);
+request.onload = function () {
+  console.log(request.response);
+  console.log(JSON.parse(request.response));
+  console.log(request.status);
 
-    if(request.status >=400){
-        console.log('faild');
-    }else{
-        console.log(request.response);
-    }
+  if (request.status >= 400) {
+    console.log("faild");
+  } else {
+    console.log(request.response);
+  }
 };
 
-request.onerror = function(){
-    console.log("ERROR");
-}
+request.onerror = function () {
+  console.log("ERROR");
+};
 
 //send the request over the network
 request.send();
 
 //json fake api example
 
-//fake json api example 
-//api url : https://jsonplaceholder.typicode.com/users 
+//fake json api example
+//api url : https://jsonplaceholder.typicode.com/users
 //Create a new XMLHttpRequest object let request
 
 let fakeRequest = new XMLHttpRequest();
 fakeRequest.open("POST", "https://jsonplaceholder.typicode.com/users ");
 fakeRequest.setRequestHeader("Content-Type", "application/json");
-fakeRequest.onload = function(){
-    console.log(fakeRequest.response);
-    console.log(JSON.parse(fakeRequest.response));
-    console.log(fakeRequest.status);
+fakeRequest.onload = function () {
+  console.log(fakeRequest.response);
+  console.log(JSON.parse(fakeRequest.response));
+  console.log(fakeRequest.status);
 
-    if(fakeRequest.status >= 400){
-        console.log("faild");
-    }else{
-        console.log(fakeRequest.response);
-    }
+  if (fakeRequest.status >= 400) {
+    console.log("faild");
+  } else {
+    console.log(fakeRequest.response);
+  }
 };
 const body = {
-    name: 'testing data',
-    power:"78 hrs",
+  name: "testing data",
+  power: "78 hrs",
 };
 
 //send the request over the server
@@ -133,5 +134,3 @@ fakeRequest.send(JSON.stringify(body));
 //header in api => while making http request to api header refers to the additional information sent along with the request
 //header is nothing but key-value pairs
 //commom headers used in api request => 1.("content-type", "application/json"), 2.Authorization(tokes or api keys), 3.Accept ("Application/json", "text/html"), 4.User-Agent, Cache-Control, Cookie.
-
-

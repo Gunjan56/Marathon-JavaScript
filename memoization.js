@@ -1,7 +1,9 @@
 //Memoization in Js =>
 // Memoization is an technique that can be used to reduce time consuming
 //calculations by saving previous input to something called cache and returning the result from it
-//suppose we have written code and want to access the result from that code and now we want to access that result again and again so for resucing the time consume we used to store that result into something called cache and then if when we need that result we just access that result from our cache and no need to execute the code again for the same result
+//suppose we have written code and want to access the result from that code and now we want to
+//access that result again and again so for resucing the time consume we used to store that result 
+//into something called cache and then if when we need that result we just access that result from our cache and no need to execute the code again for the same result
 let sum = 0;
 const calc = (n) => {
   for (let i = 0; i <= n; i++) {
