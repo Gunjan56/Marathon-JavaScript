@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(37, 28, 28);
+}
+.parent {
+  height: 400px;
+  width: 400px;
+  background-color: red;
+  position: relative;
+}
+.child {
+  height: 50px;
+  width: 50px;
+  background-color: blue;
+  position: absolute;
+}
+.child1 {
+  bottom: 0;
+  left: 0;
+}
+.child2 {
+  bottom: 0;
+  right: 0;
+}
