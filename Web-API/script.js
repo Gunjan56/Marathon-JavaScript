@@ -26,6 +26,16 @@ console.log(localStorage.getItem("Name"));
 localStorage.removeItem("Branch");
 localStorage.clear();
 
-//session Storage=>
+//session Storage=>the session storage object stores data only for a session which means that the data stored in the session storage will be deleted when the browser is closed
+sessionStorage.setItem("Name", "john");
+console.log(sessionStorage);
+console.log(sessionStorage.getItem("Name"));
+sessionStorage.removeItem("Name");
 
-//IndexedDB=>
+//IndexedDB=>indexedDB is a large scale object store built into the browser, allows you to store data into key value pairs
+//Values can be any javaScript data types indexedDB allows you to create web applications that work both online and offline
+//It's useful for that stores the large amount of datathat don't need persistent internet connection
+//For example google docs Uses the indexedDB to store the cached documents in the browser and synchronizes with the server once in a while
+//this allows google Docs to incrase performance while enhancing user experinces, and you will find other types of applications that heavily used indexedDB like online notePad, quizzes, todo lists, code sandboxex and CMS.
+console.log(indexedDB.open("CSM")); //it returns a promise in pending state
+console.log(indexedDB);
